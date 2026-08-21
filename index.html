@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joyeux Anniversaire Papa 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #3d214f;
+      background: #fff8fc;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --pink: #ff5fa2;
+      --pink2: #ff8fc4;
+      --purple: #7c4dff;
+      --yellow: #ffd166;
+      --blue: #65c7ff;
+      --cream: #fff8fc;
+      --dark: #3d214f;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #f4d9e8;
+      box-shadow: 0 4px 20px rgba(90, 35, 90, .08);
+    }
+    nav {
+      max-width: 1150px;
+      height: 70px;
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--pink);
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-weight: 600;
+      font-size: .95rem;
+    }
+    .nav-links a:hover { color: var(--pink); }
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+    /* General */
+    section { padding: 90px 20px; }
+    .container { max-width: 1150px; margin: auto; }
+    .section-title {
+      font-family: 'Baloo 2', cursive;
+      text-align: center;
+      font-size: clamp(2.1rem, 5vw, 3.4rem);
+      color: var(--purple);
+      margin-bottom: 18px;
+    }
+    .section-subtitle {
+      max-width: 750px;
+      margin: 0 auto 45px;
+      text-align: center;
+      line-height: 1.8;
+      color: #694d70;
+    }
+    /* Hero */
+    .hero {
+      min-height: calc(100vh - 70px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 15% 20%, #ffd9eb 0 10%, transparent 28%),
+        radial-gradient(circle at 85% 15%, #dcd0ff 0 10%, transparent 28%),
+        linear-gradient(135deg, #fff4fa, #f6f0ff 55%, #fff8dc);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+    .mini-label {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 30px;
+      background: white;
+      color: var(--pink);
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(100, 40, 100, .1);
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: .95;
+      color: var(--pink);
+      text-shadow: 3px 5px 0 #ffd6e8;
+      margin-bottom: 25px;
+    }
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      line-height: 1.8;
+      color: #593e61;
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      color: white;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      box-shadow: 0 12px 30px rgba(124, 77, 255, .25);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .cta:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(124, 77, 255, .35);
+    }
+    /* Birthday illustration */
+    .birthday-art {
+      margin: 48px auto 0;
+      width: min(650px, 95%);
+      min-height: 250px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .cake {
+      position: relative;
+      width: 300px;
+      height: 150px;
+      background: linear-gradient(#ff9fc9, #ff6fae);
+      border-radius: 18px 18px 25px 25px;
+      box-shadow: 0 18px 35px rgba(100, 30, 80, .18);
+    }
+    .cake::before {
+      content: "";
+      position: absolute;
+      top: 38px;
+      left: 0;
+      width: 100%;
+      height: 24px;
+      background: #fff4fb;
+      border-radius: 50%;
+      box-shadow: 0 58px 0 #fff4fb;
+    }
+    .cake-top {
+      position: absolute;
+      top: -18px;
+      left: 8px;
+      width: calc(100% - 16px);
+      height: 48px;
+      border-radius: 50%;
+      background: #ffd1e6;
+      z-index: 2;
+    }
+    .candles {
+      position: absolute;
+      top: -92px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 27px;
+      z-index: 5;
+    }
+    .candle {
+      width: 14px;
+      height: 62px;
+      border-radius: 5px;
+      background: repeating-linear-gradient(135deg, #7c4dff 0 8px, #ffd166 8px 16px);
+      position: relative;
+    }
+    .flame {
+      position: absolute;
+      width: 17px;
+      height: 24px;
+      top: -25px;
+      left: -2px;
+      background: #ffd166;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      box-shadow: 0 0 18px #ffd166;
+    }
+    .balloon {
+      position: absolute;
+      width: 62px;
+      height: 78px;
+      border-radius: 50% 50% 48% 48%;
+      animation: float 4s ease-in-out infinite;
+      box-shadow: inset -8px -10px 0 rgba(0,0,0,.06);
+    }
+    .balloon::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 115px;
+      background: #a27d91;
+      top: 75px;
+      left: 50%;
+    }
+    .b1 { left: 3%; top: 15px; background: #ff6fae; }
+    .b2 { left: 18%; top: 55px; background: #7c4dff; animation-delay: .8s; }
+    .b3 { right: 18%; top: 35px; background: #65c7ff; animation-delay: 1.2s; }
+    .b4 { right: 3%; top: 5px; background: #ffd166; animation-delay: .4s; }
+    @keyframes float {
+      0%,100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-18px) rotate(3deg); }
+    }
+    .confetti {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .confetti span {
+      position: absolute;
+      width: 9px;
+      height: 18px;
+      border-radius: 4px;
+      animation: fall 5s linear infinite;
+    }
+    .confetti span:nth-child(1){left:5%;background:#ff5fa2;animation-delay:0s}
+    .confetti span:nth-child(2){left:14%;background:#ffd166;animation-delay:1s}
+    .confetti span:nth-child(3){left:27%;background:#7c4dff;animation-delay:2s}
+    .confetti span:nth-child(4){left:43%;background:#65c7ff;animation-delay:.5s}
+    .confetti span:nth-child(5){left:61%;background:#ff5fa2;animation-delay:1.7s}
+    .confetti span:nth-child(6){left:77%;background:#ffd166;animation-delay:.8s}
+    .confetti span:nth-child(7){left:91%;background:#7c4dff;animation-delay:2.4s}
+    @keyframes fall {
+      from { transform: translateY(-80px) rotate(0); opacity: 1; }
+      to { transform: translateY(105vh) rotate(360deg); opacity: .15; }
+    }
+    /* About */
+    .about {
+      background: white;
+    }
+    .about-card {
+      max-width: 900px;
+      margin: auto;
+      padding: 45px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #fff0f7, #f2edff);
+      border: 2px solid #f7d7e9;
+      box-shadow: 0 18px 50px rgba(90,35,90,.08);
+      text-align: center;
+    }
+    .about-icon { font-size: 4rem; margin-bottom: 15px; }
+    .about-card p {
+      line-height: 1.9;
+      margin: 12px auto;
+      max-width: 780px;
+    }
+    /* Celebration */
+    .celebration {
+      background: linear-gradient(135deg, #fff8dc, #fff0f8);
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .card {
+      background: rgba(255,255,255,.85);
+      border-radius: 25px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(90,35,90,.08);
+      transition: transform .25s;
+    }
+    .card:hover { transform: translateY(-8px); }
+    .card .icon { font-size: 3rem; margin-bottom: 14px; }
+    .card h3 {
+      font-family: 'Baloo 2', cursive;
+      color: var(--purple);
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    .card p { line-height: 1.7; color: #6b526f; }
+    /* Birthday gallery without personal photos */
+    .gallery {
+      background: white;
+    }
+    .birthday-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .birthday-box {
+      min-height: 230px;
+      border-radius: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: white;
+      box-shadow: 0 15px 35px rgba(80,30,80,.12);
+      overflow: hidden;
+      position: relative;
+    }
+    .birthday-box:nth-child(1){background:linear-gradient(135deg,#ff5fa2,#ff9bc9)}
+    .birthday-box:nth-child(2){background:linear-gradient(135deg,#7c4dff,#a982ff)}
+    .birthday-box:nth-child(3){background:linear-gradient(135deg,#ffb52e,#ffd96a)}
+    .birthday-box:nth-child(4){background:linear-gradient(135deg,#37aee2,#8ad9ff)}
+    .birthday-box::before {
+      content:"✨";
+      position:absolute;
+      font-size:5rem;
+      opacity:.18;
+      top:5px;
+      right:10px;
+    }
+    .birthday-box .big { font-size: 4.5rem; margin-bottom: 8px; }
+    .birthday-box h3 { font-family:'Baloo 2',cursive; font-size:1.5rem; }
+    .birthday-box p { font-size:.9rem; margin-top:4px; }
+    /* Messages */
+    .messages {
+      background: linear-gradient(135deg, #f7efff, #fff3f8);
+    }
+    .message-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+    .message {
+      background: white;
+      border-radius: 25px;
+      padding: 30px;
+      border-left: 6px solid var(--pink);
+      box-shadow: 0 12px 30px rgba(90,35,90,.08);
+    }
+    .message:nth-child(2) { border-left-color: var(--purple); }
+    .message strong { color: var(--pink); }
+    .message p:last-child {
+      margin-top: 12px;
+      font-style: italic;
+      line-height: 1.8;
+    }
+    .fleche {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 30px;
+    color: #ff5fa2;
+    font-weight: bold;
+}
+    footer {
+      background: #321a42;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+    footer .cake-emoji { font-size: 3rem; margin-bottom: 10px; }
+    @media (max-width: 850px) {
+      .nav-links {
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        gap: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,.08);
+      }
+      .nav-links.show { display: flex; }
+      .menu-btn { display: block; }
+      .cards, .birthday-gallery { grid-template-columns: repeat(2, 1fr); }
+      .message-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      section { padding: 65px 15px; }
+      .hero { min-height: auto; padding: 70px 15px 90px; }
+      .cake { width: 230px; height: 125px; }
+      .birthday-gallery, .cards { grid-template-columns: 1fr; }
+      .about-card { padding: 30px 20px; }
+      .b1 { left: 0; }
+      .b4 { right: 0; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a class="logo" href="#hero">🎂 Papa's Birthday</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero">Accueil</a></li>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#celebration">Célébration</a></li>
+      <li><a href="#gallery">Fête</a></li>
+      <li><a href="#messages">Messages</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="hero" id="hero">
+    <div class="confetti">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </div>
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+    <div class="balloon b3"></div>
+    <div class="balloon b4"></div>
+    <div class="hero-content">
+      <div class="mini-label">🎉 Une journée spéciale 🎉</div>
+      <h1>Joyeux anniversaire, Papa !</h1>
+      <p>
+        Aujourd'hui, nous célébrons une personne exceptionnelle.
+        Que cette belle journée soit remplie de bonheur, de sourires,
+        d'amour et de magnifiques souvenirs. ❤️
+      </p>
+      <a class="cta" href="page2.html">🎁 Découvrir la fête</a>
+      <div class="birthday-art" aria-label="Gâteau d'anniversaire décoratif">
+        <div class="cake">
+          <div class="cake-top"></div>
+          <div class="candles">
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">À propos de Papa 💖</h2>
+      <div class="about-card">
+        <div class="about-icon">👨‍👩‍👧‍👦</div>
+        <p>
+          Papa, aujourd’hui est une journée très spéciale, car nous 
+          célébrons une personne qui compte énormément pour nous. Merci 
+          pour ton amour, ta présence, tes conseils et tous les beaux moments 
+          que tu nous offres chaque jour. Nous te souhaitons beaucoup de bonheur,
+          de santé, de sourires et encore plein de merveilleux souvenirs à partager ensemble. ❤️🎂
+        </p>
+        <p>
+          « Papa, cette journée est pour toi ! Profite de chaque sourire, 
+          de chaque moment et de tout l’amour qui t’entoure. On te souhaite 
+          une journée aussi belle et spéciale que toi. Joyeux anniversaire ! 🎂🎉❤️ »
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="celebration" id="celebration">
+    <div class="container">
+      <h2 class="section-title">Une journée remplie de joie 🎉</h2>
+      <p class="section-subtitle">
+        Nous célébrons chaque rire partagé, chaque histoire racontée
+        et chaque moment de tendresse que Papa a apporté à nos vies.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">🎂</div>
+          <h3>Le gâteau</h3>
+          <p>Un délicieux gâteau pour rendre cette journée encore plus spéciale.</p>
+          <button class="fleche">→</button>
+        </div>
+        <div class="card">
+          <div class="icon">🎵</div>
+          <h3>La musique</h3>
+          <p>De la bonne musique, de la bonne humeur et beaucoup de sourires.</p>
+          <button class="fleche">→</button>
+        </div>
+        <div class="card">
+          <div class="icon">🎁</div>
+          <h3>Les cadeaux</h3>
+          <p>Des cadeaux remplis d'amour pour remercier Papa pour tout.</p>
+          <button class="fleche">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <h2 class="section-title">Ambiance anniversaire 🎈</h2>
+      <p class="section-subtitle">
+        Une belle occasion de se retrouver, de rire ensemble 
+        et de créer encore de merveilleux souvenirs en famille. 👨‍👩‍👧‍👦❤️ »
+      </p>
+      <div class="birthday-gallery">
+        <div class="birthday-box">
+          <div class="big">🎂</div>
+          <h3>Happy Birthday</h3>
+          <p>Une journée pleine de bonheur</p>
+        </div>
+        <div class="birthday-box">
+          <div class="big">🎈</div>
+          <h3>Les ballons</h3>
+          <p>Une fête colorée et joyeuse</p>
+        </div>
+        <div class="birthday-box">
+          <div class="big">🎁</div>
+          <h3>Les cadeaux</h3>
+          <p>Des surprises avec beaucoup d'amour</p>
+        </div>
+        <div class="birthday-box">
+          <div class="big">🥳</div>
+          <h3>La fête</h3>
+          <p>Des sourires et de beaux souvenirs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="messages" id="messages">
+    <div class="container">
+      <h2 class="section-title">Messages de la famille 💌</h2>
+      <div class="message-grid">
+        <div class="message">
+          <p><strong>Hiba, fille :</strong></p>
+          <p>
+            « Papa, aujourd’hui, je veux simplement te dire à quel point ta 
+            présence dans ma vie compte pour moi. Merci pour tout ce que tu 
+            fais pour nous et pour tous ces moments où tu nous apportes du bonheur 
+            et de la sécurité. Je souhaite de tout mon cœur que nous restions toujours
+            réunis et que nous puissions encore partager beaucoup de beaux moments
+            ensemble. Que Dieu te garde pour nous, te donne la santé et le bonheur,
+            et que nous puissions toujours être fiers de toi. ❤️🎂❤️ »
+          </p>
+        </div>
+        <div class="message">
+          <p><strong>Maman :</strong></p>
+          <p>
+            « Encore 100 ans à tes côtés, si Dieu le veut. Que Dieu te garde 
+            pour nous et te donne une longue vie pleine de bonheur. Nous sommes 
+            tellement fiers de toi, Papa. T’avoir à nos côtés est la plus belle 
+            chose que nous puissions avoir dans cette vie. ❤️🎂 💕 »
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="cake-emoji">🎂🎈🎁</div>
+  <p>© 2026 Famille Ben — Joyeux anniversaire Papa ! ❤️</p>
+</footer>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+  document.querySelectorAll('#navLinks a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('show'));
+  });
+</script>
+</body>
+</html>
